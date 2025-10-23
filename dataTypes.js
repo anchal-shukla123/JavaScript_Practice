@@ -21,17 +21,23 @@ let name="akshat" // gives error cannot re-declare block level variable
 */
 
 
-
-//DATA TYPES IN JAVASCRIPT
 /*
-Number
-Bigint
-Boolean
-String 
-Symbol
-Undefined
-Null -> Object type
-Object
+DATA TYPES IN JAVASCRIPT-----
+
+* Primitive types-
+-> Number
+-> String
+-> Symbol
+-> Boolean
+-> Bigint
+-> null
+-> Undefined
+
+* Non Primitive types(Refernce types)-
+-> Object
+-> Array
+-> Function
+
 */
 
 let a=10;

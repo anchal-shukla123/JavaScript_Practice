@@ -38,4 +38,3 @@ let String3=String(b1)
 let String4=String(b2)
 console.log(["ToStrings:" ,String1, String2, String3, String4]) //[ 'ToStrings:', '44', '0', 'true', 'false' ]
 console.log([typeof String1, typeof String2, typeof String3, typeof String4]) //[ 'string', 'string', 'string', 'string' ]
-//dummy commit
