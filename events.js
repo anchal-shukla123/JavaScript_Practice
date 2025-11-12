@@ -12,10 +12,13 @@ a.addEventListener('click', fun1);
 a.addEventListener('click', fun2);
 let val=prompt("Enter 1 or 2");
 
-function fun1(){
-    
+function fun1(e){
+    console.log(e);
+    console.log(e.type);
+    console.log(e.target);
+    console.log(e.currentTarget); // same as target
     alert("hello :)")
-
+    e.target.style="color: red";  // style manipulation
 }
 function fun2(){
     
