@@ -8,12 +8,11 @@ let q= new Promise(function (resolve, reject){
         console.log("time out function execeuted");
         resolve(100)
     }, 3000)
-    reject(new Error())
 });
-p.then((value)=>{
+q.then((value)=>{
     console.log(value)
 });
-p.catch((error)=>{
+q.catch((error)=>{
     console.log("Error occured !")
 })
 
@@ -26,14 +25,42 @@ let p= new Promise((resolve, reject)=>{
     }, 2000)
 })
 p.then((value)=>{
-        setTimeout(()=>{
+        return new Promise((resolve, reject)=>setTimeout(()=>{
         console.log("first resolve", value);
         console.log("Second chain");
-    }, 2000)
+        resolve(200);
+    }, 2000))
 }).then((value)=>{
-    setTimeout(()=>{
+    return new Promise((resolve, reject)=>setTimeout(()=>{
         console.log("second resolve", value);
         console.log("third chain");
-        
-    }, 2000)
+        resolve(300);
+    }, 2000))
+}).then((value)=>{
+    console.log(value);
 })
+
+
+/*--------MULTIPLE HANDLERS---------- */
+let r= new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        console.log("Promise is resolved")
+        resolve(100)
+    },4000)
+})
+r.then(()=>{
+    console.log("Handler1")
+})
+r.then(()=>{
+    console.log("Handler2")
+})
+r.then(()=>{
+    console.log("Handler3")
+})
+// All these handlers will simultaneously run
+
+/*-----------PROMISE API-----------*/
+let s=Promise.all([p, q, r])
+s.then(()=>{
+    console.log("Final Promise")
+});

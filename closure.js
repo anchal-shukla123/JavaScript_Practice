@@ -1,6 +1,6 @@
 /*
-Closure is a function that reatins access to its outer function even if the outer function has
- finished executing.
+Closure is a function that reatins access to its outer function even if the
+ outer function has finished executing.
 */
 
 //----Example----
@@ -14,6 +14,6 @@ function outer(){
     return inner;
 }
 let fun = outer();
-fun();
-fun();
-fun();
+fun(); //outer
+fun(); //inner
+fun(); //inner

@@ -30,7 +30,7 @@
   //1. using assign method
   obj3=Object.assign({}, obj1, obj2);
 
-  //1. using spread
+  //2. using spread
   obj4={ ...obj1, ...obj2};
 
   console.log(obj3);
