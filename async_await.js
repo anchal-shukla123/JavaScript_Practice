@@ -22,7 +22,7 @@ async function weather(){
      console.log("fetched a");
      console.log("fetching b");
     let val2= await b;
-     console.log("fetched d");
+     console.log("fetched d ");
     return [val1, val2];
 }
 let ans= await weather();
