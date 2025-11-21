@@ -19,5 +19,3 @@ function fun(){
     }
 }
 fun();
-
-//THIS IS NOT A PUSH
