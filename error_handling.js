@@ -4,7 +4,7 @@ try{
 catch(err){
     console.log(err);
 }
-function fun(){
+function fun1(){
     try{
         setTimeout(()=>{
             console.log("nums"  )//try block does not work in async functions
@@ -18,4 +18,5 @@ function fun(){
         console.log("this is finally");
     }
 }
-fun();
+fun1();
+console.log("hello");

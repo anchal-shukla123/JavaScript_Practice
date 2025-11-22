@@ -31,3 +31,4 @@ if(val==1){
 if(val==2){
     a.removeEventListener('click', fun1);
 }
+//commit
