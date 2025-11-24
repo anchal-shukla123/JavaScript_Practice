@@ -6,7 +6,6 @@
     res.write('<head><title>My Title</title></head>');
     res.write('<body><h1>Hello</h1></body>');
     res.write('</html>');
-    res.end();
  });
  server.listen(4005, ()=>{
    console.log("server running on port 4005");
