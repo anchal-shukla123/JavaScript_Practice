@@ -24,6 +24,7 @@
       fs.writeFileSync('user.txt', 'anchal shukla');
       res.statusCode= 302;
       res.setHeader('Location', '/');
+      return res.end();
     }
     else if(req.url==='/products'){
       res.setHeader('Content-Type','text/html');
@@ -44,5 +45,4 @@
  });
  server.listen(4008, ()=>{
    console.log("server running on port 4005");
-
  });
