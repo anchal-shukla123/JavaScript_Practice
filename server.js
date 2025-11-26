@@ -28,11 +28,18 @@
       })
       req.on('end',()=>{
         const ans=Buffer.concat(body).toString();
-        fs.writeFileSync('user.txt', ans);
+        const bodyObject={};
+        const information= new URLSearchParams(ans);
+        for(const [key,val] of information.entries()){
+         bodyObject[key]=val;
+       }
+       // const bodyObject=Object.fromEntries(infromation) ----> creates array of key vale pair
+       fs.writeFileSync('user.txt', ans);
+       fs.writeFileSync('user.txt',JSON.stringify(bodyObject));
         console.log(ans);
       })
       res.statusCode= 302;
-      res.setHeader('Location', '/');
+      // res.setHeader('Location', '/');
       return res.end();
     }
     else if(req.url==='/products'){
