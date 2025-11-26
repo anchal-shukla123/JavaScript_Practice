@@ -20,8 +20,17 @@
     res.write('</html>');
     return res.end();
     }
-    else if(req.url.toLowerCase()==="/submit-url" && req.method=="POST"){
-      fs.writeFileSync('user.txt', 'anchal shukla');
+    else if(req.url.toLowerCase()==="/submit-url" && req.method=="POST"){  
+      const body=[];
+      req.on('data',(chunk)=>{
+        console.log(chunk);
+        body.push(chunk);
+      })
+      req.on('end',()=>{
+        const ans=Buffer.concat(body).toString();
+        fs.writeFileSync('user.txt', ans);
+        console.log(ans);
+      })
       res.statusCode= 302;
       res.setHeader('Location', '/');
       return res.end();
