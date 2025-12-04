@@ -15,5 +15,4 @@ const sumHandler= (req, res)=>{
 
    })
 } 
-
 exports.sumHandler=sumHandler;
