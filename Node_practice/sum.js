@@ -10,10 +10,10 @@ const sumHandler= (req, res)=>{
    const data=Object.fromEntries(params);
    const val=Number(data.num1)+Number(data.num2);
    console.log(val);
-   console.log("hello");
    res.setHeader('Content-Type', 'text/html');
    res.write(`<html><head><title>Calculator</title></head><body><h1>Your Sum is ${val} </h1></body></html>`);
 
    })
 } 
 exports.sumHandler=sumHandler;
+
