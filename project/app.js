@@ -1,8 +1,8 @@
-const http= require('http');
-const server= http.createServer((req, res)=>{
-
-});
-server.listen(4005, ()=>{
-    console.log('server started');
-    console.log('server started');
+const express=require('express');
+const app=express();
+app.use((req, res, next)=>{
+   res.send('<h1>Server index:)!!!</h1>')
+})
+app.listen(4010, ()=>{
+    console.log('server chalu:)');
 })

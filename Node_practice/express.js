@@ -1,9 +1,9 @@
 /*const http= require('http');----> not required*/
 const express= require('express');
 const app=express();
-app.use('/tab',(req, res, next)=>{
+app.use('/',(req, res, next)=>{
    console.log(req.url, req.method);
-   next();
+   res.send('<h1>New page</h1>')
 });
 app.use('/tab',(req, res, next)=>{
     res.send('<p> Welcome to express tab</p>')
